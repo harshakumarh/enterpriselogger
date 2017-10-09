@@ -57,7 +57,8 @@
                                     <classpath refid="maven.compile.classpath"/>
                                 </taskdef>
                                 <mkdir dir="${project.build.outputDirectory}"/>
-                                <groovyc destdir="${project.build.outputDirectory}" srcdir="${basedir}/src/main/groovy/" listfiles="true">
+                                <groovyc destdir="${project.build.outputDirectory}" srcdir="${basedir}/src/main/groovy/"
+                                         listfiles="true">
                                     <classpath refid="maven.compile.classpath"/>
                                 </groovyc>
                             </tasks>
@@ -76,7 +77,8 @@
                                     <classpath refid="maven.test.classpath"/>
                                 </taskdef>
                                 <mkdir dir="${project.build.testOutputDirectory}"/>
-                                <groovyc destdir="${project.build.testOutputDirectory}" srcdir="${basedir}/src/test/groovy/" listfiles="true">
+                                <groovyc destdir="${project.build.testOutputDirectory}"
+                                         srcdir="${basedir}/src/test/groovy/" listfiles="true">
                                     <classpath refid="maven.test.classpath"/>
                                 </groovyc>
                             </tasks>
@@ -125,12 +127,6 @@
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>0.9.5.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.1.4</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
