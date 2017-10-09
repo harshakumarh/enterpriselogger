@@ -25,4 +25,6 @@ This component neither depends on nor ships any extra libraries other than mule 
 
 
 
-Refer [Mule 3.8.5 upgrade With Enterprise logger integration](https://github.com/sandeep-kotha/mule385upgrade) to get started with enterprise logger and Mule application
+Refer [Mule 3.8.5 upgrade With Enterprise logger integration](https://github.com/sandeep-kotha/mule385upgrade) to get started with enterprise logger and Mule application.
+
+Refer [log4j2.xml](https://github.com/sandeep-kotha/mule385upgrade/blob/master/src/main/resources/log4j2.xml) to get started with configuration within your Mule app
