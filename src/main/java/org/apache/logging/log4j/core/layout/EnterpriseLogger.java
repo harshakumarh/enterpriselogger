@@ -1,7 +1,6 @@
 package org.apache.logging.log4j.core.layout;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.logging.log4j.ThreadContext;
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.core.config.Node;
@@ -23,13 +22,13 @@ import java.util.Map;
 public class EnterpriseLogger extends AbstractStringLayout {
 
     private static final EnterpriseLogger enterpriseLogger = new EnterpriseLogger(StandardCharsets.UTF_8);
+
     protected EnterpriseLogger(Charset charset) {
         super(charset);
     }
 
     @PluginFactory
-    public static EnterpriseLogger builder()
-    {
+    public static EnterpriseLogger builder() {
         return enterpriseLogger;
     }
 
@@ -39,7 +38,7 @@ public class EnterpriseLogger extends AbstractStringLayout {
         try {
             Map<String, String> entLogEvent = new HashMap<String, String>();
 
-            if(event.getContextData() != null)
+            if (event.getContextData() != null)
                 entLogEvent.putAll(event.getContextData().toMap());
             entLogEvent.put("host_name", InetAddress.getLocalHost().getHostName());
             entLogEvent.put("event_time", DateTime.now(DateTimeZone.UTC).toString());
@@ -47,12 +46,11 @@ public class EnterpriseLogger extends AbstractStringLayout {
             entLogEvent.put("logger", event.getLoggerName());
 
             entLogEvent.put("severity", event.getLevel().name());
-            entLogEvent.put("thread", event.getThreadName()+"-"+String.valueOf(event.getThreadId()));
-            if( event.getMessage() != null)
-            {
+            entLogEvent.put("thread", event.getThreadName() + "-" + String.valueOf(event.getThreadId()));
+            if (event.getMessage() != null) {
                 entLogEvent.put("message", event.getMessage().getFormattedMessage().trim());
-                if(event.getMessage().getThrowable() != null)
-                    entLogEvent.put("exception",event.getMessage().getThrowable().toString());
+                if (event.getMessage().getThrowable() != null)
+                    entLogEvent.put("exception", event.getMessage().getThrowable().toString());
             }
 
             new ObjectMapper().writeValue(writer, entLogEvent);
