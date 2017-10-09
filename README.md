@@ -9,7 +9,7 @@ This component neither depends on nor ships any extra libraries other than mule 
 
 ## Usage
 
-* Put enterprise-logger-<version>.jar under ${MULE_HOME}/lib/boot
+* Put enterprise-logger-< version >.jar under ${MULE_HOME}/lib/boot
 * Put JDBC driver library under ${MULE_HOME}/lib/boot
 * **Move** 
     * ${MULE_HOME}/lib/opt/jackson-annotations-2.6.0.jar
