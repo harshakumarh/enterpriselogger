@@ -3,7 +3,7 @@
 This library is specific for logging with Mule 3.8.5 enterprise version
 
 ## Build
-mvn clean install
+mvn clean package
 
 This component neither depends on nor ships any extra libraries other than mule defaults
 
