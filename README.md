@@ -11,12 +11,12 @@ This component neither depends on nor ships any extra libraries other than mule 
 
 * Put enterprise-logger-< version >.jar under ${MULE_HOME}/lib/boot
 * Put JDBC driver library under ${MULE_HOME}/lib/boot
-* **Move** 
-    * ${MULE_HOME}/lib/opt/jackson-annotations-2.6.0.jar
-    * ${MULE_HOME}/lib/opt/jackson-core-2.6.6.jar
-    * ${MULE_HOME}/lib/opt/jackson-databind-2.6.6.jar
-    * ${MULE_HOME}/lib/opt/joda-time-2.9.1.jar
-    * **To** ${MULE_HOME}/lib/boot
+* **Move** below Jars from ${MULE_HOME}/lib/opt/ **To** ${MULE_HOME}/lib/boot
+    * jackson-annotations-2.6.0.jar
+    * jackson-core-2.6.6.jar
+    * jackson-databind-2.6.6.jar
+    * joda-time-2.9.1.jar
+
 * Add an entry on  ${MULE_HOME}/conf/wrapper.conf 
     * wrapper.java.additional.< n >=-Dlogger.db.props=<dbLogger.properties> **_(IMP: If you enable any of the options on wrapper.conf , 
                                                                                 you _must_ change the < n > to be a consecutive number 
