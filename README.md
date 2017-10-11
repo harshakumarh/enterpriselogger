@@ -18,7 +18,7 @@ This component neither depends on nor ships any extra libraries other than mule 
     * joda-time-2.9.1.jar
 
 * Add an entry on  ${MULE_HOME}/conf/wrapper.conf 
-    * wrapper.java.additional.< n >=-Dlogger.db.props=<full absolute file path of dbLogger.properties> **_(IMP: If you enable any of the options on wrapper.conf , 
+    * wrapper.java.additional.< n >=-Dlogger.db.props=< full absolute file path of dbLogger.properties > **_(IMP: If you enable any of the options on wrapper.conf , 
                                                                                 you _must_ change the < n > to be a consecutive number 
                                                                                 (based on the number of additional properties) otherwise 
                                                                                 Java will not parse this properties file correctly!)_**
